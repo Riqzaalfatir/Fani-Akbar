@@ -7,6 +7,7 @@ import DoaDanUcapan from "@/components/sections/DoaDanUcapan"
 import Terimakasih from "@/components/sections/Terimakasih"
 import Header from "@/components/layout/Header"
 import Opening from "@/components/popup/Opening"
+import Gallery from "@/components/sections/Gallery"
 
 
 const page = () => {
@@ -19,6 +20,7 @@ const page = () => {
        <Doa/>
        <Waktu/>
        <Rsvp/>
+       <Gallery/>
        <DoaDanUcapan/>
        <Terimakasih/>
     </>
