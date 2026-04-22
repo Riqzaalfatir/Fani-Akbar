@@ -1,5 +1,32 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import localFont from 'next/font/local'
+
+const arnoPro = localFont({
+  src: './fonts/arnopro_bold.otf',  // ← path berubah
+  variable: '--font-arno-pro',
+})
+
+const corsiva = localFont({
+  src: [
+    {
+      path: './fonts/Monotype-Corsiva-Regular.ttf',  // ← path berubah
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Monotype-Corsiva-Bold.ttf',  // ← path berubah
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-corsiva',
+})
+
+const zapfino = localFont({
+  src: "./fonts/Zapfino.ttf",
+  variable: "--font-zapfino",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,7 +45,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${arnoPro.variable} ${corsiva.variable} ${zapfino.variable}`}>
       <body>{children}</body>
     </html>
   );
