@@ -128,7 +128,7 @@ const DoaDanUcapan = () => {
                 {/* Button Kirim */}
 <button
   onClick={handleSubmit}
-  className="bg-[#6C7852] mt-[2.5vw] lg:mt-[0.35vw] rounded-full h-[8vw] lg:h-[3vw] text-[3vw] lg:text-[1.3vw] font-arno font-semibold uppercase flex items-center justify-center gap-[0.8vw] text-[#DADAD9] pt-[0.3vw] lg:pt-[0.15vw]"
+  className="bg-[#6C7852] mt-[2.5vw] lg:mt-[0.35vw] rounded-full h-[8vw] lg:h-[3vw] text-[3vw] lg:text-[1.3vw] font-arno font-semibold uppercase flex items-center justify-center gap-[0.8vw] text-[#FEFBF0] pt-[0.3vw] lg:pt-[0.15vw]"
 >
   <Image
     src="/images/doa/Panah.svg"
@@ -136,80 +136,93 @@ const DoaDanUcapan = () => {
     width={0}
     height={0}
     sizes="100vw"
-    className="w-[3.5vw] h-auto lg:w-[1.4vw]"
+    className="w-[3.5vw] h-auto lg:w-[1.8vw]"
   />
   KIRIM UCAPAN
 </button>
 
                 {/* Message List Box */}
-                <motion.div
-                  initial={{ opacity: 0, y: 80 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-                  className={`w-full mt-[2.5vw] lg:mt-[1.35vw] py-[3vw] lg:py-[1.5vw] px-[4vw] lg:px-[2vw] ${
-                    showAll
-                      ? "bg-transparent"
-                      : "bg-[#6C7852] rounded-2xl h-[80vw] lg:h-[36vw] overflow-y-auto"
-                  }`}
-                >
-                  {!showAll ? (
-                    pesanList.slice(0, 8).map((item, index, array) => (
-                      <div key={item.id}>
-                        <p className="text-[#DADAD9] font-arnoCaption font-bold text-[3vw] lg:text-[1.3vw] mb-[1vw] lg:mb-[0.5vw]">
-                          {item.nama}
-                        </p>
-                        <p className="text-[#DADAD9] font-arno font-semibold text-[3vw] lg:text-[1.3vw] tracking-[0.5px]">
-                          {item.pesan}
-                        </p>
-                        {index !== array.length - 1 && (
-                          <div className="border-t border-[#DADAD9]/40 my-[2vw] lg:my-[1vw]" />
-                        )}
-                      </div>
-                    ))
-                  ) : (
-                    // showAll: full width grid, tidak pakai w-screen
-                    <div className="w-full">
-                      <motion.div
-                        layout
-                        initial="hidden"
-                        animate="visible"
-                        variants={{
-                          hidden: {},
-                          visible: { transition: { staggerChildren: 0.1 } },
-                        }}
-                        className="grid grid-cols-2 gap-[2vw] lg:gap-[1vw]"
-                      >
-                        {pesanList.map((item) => (
-                          <motion.div
-                            key={item.id}
-                            variants={{
-                              hidden: { opacity: 0, y: 50, scale: 0.95 },
-                              visible: { opacity: 1, y: 0, scale: 1 },
-                            }}
-                            transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-                            onClick={() => setSelectedMessage(item)}
-                            className="min-h-[30vw] lg:min-h-[14vw] rounded-md overflow-hidden shadow-md bg-[#F4F8F5] flex flex-col cursor-pointer"
-                          >
-                            <div className="p-[2vw] lg:p-[1vw] relative flex-1 flex flex-col justify-center">
-                              <p className="text-[10vw] font-arno lg:text-[4vw] text-slate-500 opacity-30 leading-none absolute top-[1vw] left-[2vw]">
-                                "
-                              </p>
-                              <p className="text-[2.5vw] font-arnoCaption lg:text-[1.1vw] leading-relaxed px-[1vw] lg:px-[2vw] pt-[4vw] lg:pt-[2.5vw] text-slate-600 font-medium line-clamp-3 text-center">
-                                {item.pesan}
-                              </p>
-                            </div>
-                            <div className="bg-[#5A6644] font-arno h-[8vw] lg:h-[3vw] flex items-center justify-center px-[2vw]">
-                              <p className="text-white text-[2.5vw] lg:text-[1.1vw] font-bold text-center line-clamp-1">
-                                {item.nama}
-                              </p>
-                            </div>
-                          </motion.div>
-                        ))}
-                      </motion.div>
-                    </div>
-                  )}
-                </motion.div>
+               {/* Message List Box */}
+<motion.div
+  initial={{ opacity: 0, y: 80 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+  className={`w-full mt-[2.5vw] lg:mt-[1.35vw] ${
+    showAll
+      ? "bg-transparent"
+      : "bg-[#6C7852] rounded-2xl h-[80vw] lg:h-[36vw] overflow-y-auto"
+  }`}
+>
+  {!showAll ? (
+    <div>
+
+      {/* Sticky top penutup */}
+      <div className="sticky top-0 w-full h-[2.8vw] lg:h-[1.5vw] bg-[#6C7852] z-10" />
+
+      {/* List komentar */}
+      <div className="px-[4vw] lg:px-[2vw]">
+        {pesanList.slice(0, 8).map((item, index, array) => (
+          <div key={item.id}>
+            <p className="text-[#DADAD9] font-arnoCaption font-bold text-[3vw] lg:text-[1.3vw] mb-[1vw] lg:mb-[0.5vw]">
+              {item.nama}
+            </p>
+            <p className="text-[#DADAD9] font-arno font-semibold text-[3vw] lg:text-[1.3vw] tracking-[0.5px]">
+              {item.pesan}
+            </p>
+            {index !== array.length - 1 && (
+              <div className="border-t border-[#DADAD9]/40 my-[2vw] lg:my-[1vw]" />
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Sticky bottom penutup */}
+      {/* <div className="sticky bottom-0 w-full h-[0.5vw] lg:h-[2vw] bg-[#6C7852] z-10" /> */}
+
+    </div>
+  ) : (
+    <div className="w-full">
+      <motion.div
+        layout
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: {},
+          visible: { transition: { staggerChildren: 0.1 } },
+        }}
+        className="grid grid-cols-2 gap-[2vw] lg:gap-[1vw]"
+      >
+        {pesanList.map((item) => (
+          <motion.div
+            key={item.id}
+            variants={{
+              hidden: { opacity: 0, y: 50, scale: 0.95 },
+              visible: { opacity: 1, y: 0, scale: 1 },
+            }}
+            transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+            onClick={() => setSelectedMessage(item)}
+            className="min-h-[30vw] lg:min-h-[14vw] rounded-md overflow-hidden shadow-md bg-[#F4F8F5] flex flex-col cursor-pointer"
+          >
+            <div className="p-[2vw] lg:p-[1vw] relative flex-1 flex flex-col justify-center">
+              <p className="text-[10vw] font-arno lg:text-[4vw] text-slate-500 opacity-30 leading-none absolute top-[1vw] left-[2vw]">
+                "
+              </p>
+              <p className="text-[2.5vw] font-arnoCaption lg:text-[1.1vw] leading-relaxed px-[1vw] lg:px-[2vw] pt-[4vw] lg:pt-[2.5vw] text-slate-600 font-medium line-clamp-3 text-center">
+                {item.pesan}
+              </p>
+            </div>
+            <div className="bg-[#5A6644] font-arno h-[8vw] lg:h-[3vw] flex items-center justify-center px-[2vw]">
+              <p className="text-white text-[2.5vw] lg:text-[1.1vw] font-bold text-center line-clamp-1">
+                {item.nama}
+              </p>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
+  )}
+</motion.div>
 
                 <WishesCard
                   data={selectedMessage}

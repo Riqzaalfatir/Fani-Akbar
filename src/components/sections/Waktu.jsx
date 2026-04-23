@@ -197,8 +197,8 @@ const Waktu = () => {
         </div>
 
    <Animate type="fadeup" delay={0.9}>
- <button className="bg-[#721623] w-[41vw] lg:w-[14.815vw] h-[8.46vw] lg:h-[2.778vw] font-arno font-semibold text-[3.08vw] lg:text-[1.190vw] rounded-full text-white mt-[8vw] lg:mt-[2vw]  flex items-center justify-center">
-  GOOGLE MAPS
+ <button className="bg-[#721623] w-[41vw] lg:w-[14.815vw] h-[8.46vw] lg:h-[2.778vw] font-arno font-semibold text-[3.08vw] lg:text-[1.190vw] rounded-full text-white mt-[8vw] lg:mt-[2vw] flex items-center justify-center">
+  <span className="translate-y-[0.12em]">GOOGLE MAPS</span>
 </button>
                     </Animate>
 

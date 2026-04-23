@@ -109,11 +109,11 @@ const Opening = ({ setStart, namaTamu = "Sela" }) => {
                 for any misspelling of names or titles.
               </p>
               <button
-                onClick={handleOpen}
-                className="bg-[#721623] pt-[0.4vw] lg:pt-[0.25vw] leading-[1] text-white w-[184px] h-[33px] md:w-[220px] md:h-[40px] rounded-full uppercase font-arno font-semibold text-[12px] lg:text-[18px] mt-[12px] md:mt-[20px]"
-              >
-                Open Invitation
-              </button>
+  onClick={handleOpen}
+  className="bg-[#721623] flex items-center justify-center text-white w-[184px] h-[33px] md:w-[220px] md:h-[40px] rounded-full uppercase font-arno font-semibold text-[12px] lg:text-[18px] mt-[12px] md:mt-[20px]"
+>
+  <span className="translate-y-[0.12em]">Open Invitation</span>
+</button>
             </div>
           </motion.div>
         </motion.div>

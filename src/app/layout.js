@@ -26,6 +26,7 @@ const arnoPro = localFont({
     },
   ],
   variable: "--font-arno-pro",
+  
 });
 
 const arnoCaption = localFont({

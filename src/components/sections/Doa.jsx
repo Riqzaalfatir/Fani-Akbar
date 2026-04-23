@@ -62,7 +62,7 @@ const Doa = () => {
               menjadi tanda-tanda kekuasaan-Nya<br />
               bagi orang-orang yang berpikir."
               <br />
-              <span className="font-bold lg:block lg:mt-[1.8vw]">(QS. Ar-Rum: 21)</span>
+              <span className="font-bold block mt-[3.5vw] lg:mt-[1.8vw]">(QS. Ar-Rum: 21)</span>
             </p>
             </Animate>
           </div>

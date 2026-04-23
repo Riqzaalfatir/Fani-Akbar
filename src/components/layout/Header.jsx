@@ -113,7 +113,7 @@ className="pt-[6vw] lg:pt-[2vw] pl-[4vw] lg:pl-[1vw] space-y-[1.5vw] lg:space-y-
                   </span>
 
                   {/* TEXT */}
-                  <span className="transition-all duration-300 ease-out group-hover:translate-x-[1vw] lg:group-hover:translate-x-[1.5vw]">
+                  <span className="transition-all duration-300 ease-out group-hover:translate-x-[4.5vw] lg:group-hover:translate-x-[1.5vw]">
                     {menu.name}
                   </span>
                 </motion.a>
