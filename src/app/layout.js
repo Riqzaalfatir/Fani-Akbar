@@ -48,19 +48,18 @@ const arnoCaption = localFont({
 const corsiva = localFont({
   src: [
     {
-      path: "./fonts/Monotype-Corsiva-Regular.ttf", // ← path berubah
+      path: "./fonts/Monotype-Corsiva-Regular.ttf", 
       weight: "400",
       style: "normal",
     },
     {
-      path: "./fonts/Monotype-Corsiva-Bold.ttf", // ← path berubah
+      path: "./fonts/Monotype-Corsiva-Bold.ttf", 
       weight: "700",
       style: "normal",
     },
   ],
   variable: "--font-corsiva",
 });
-
 
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",

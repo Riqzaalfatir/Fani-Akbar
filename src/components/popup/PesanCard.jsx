@@ -10,6 +10,8 @@ const WishesCard = ({ data, onClose }) => {
       onClick={onClose}
       className="fixed flex-col inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm z-50 px-4"
     >
+
+      {/* CONTENT */}
       <motion.div
         initial={{ opacity: 0, scale: 0.85, y: 40 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -29,6 +31,7 @@ const WishesCard = ({ data, onClose }) => {
         </p>
       </motion.div>
 
+      {/* BUTTON KEMBALI */}
       <button
         onClick={onClose}
         className="w-[320px] font-arno md:w-[380px] bg-[#5A6644] font-sweetsans font-semibold text-white py-2 rounded-md text-[13px] tracking-widest hover:opacity-90 transition"

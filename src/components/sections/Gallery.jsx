@@ -3,21 +3,28 @@
 import React from 'react'
 import Image from 'next/image'
 import { useState } from 'react';
+
+// Library carousel dari Embla
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
+
+// Library lightbox (popup foto fullscreen)
 import Lightbox from "yet-another-react-lightbox";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Counter from "yet-another-react-lightbox/plugins/counter";
+
+// CSS bawaan lightbox
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import "yet-another-react-lightbox/plugins/counter.css";
 
+// Daftar foto yang ditampilkan di carousel & lightbox 
 const images = [
-  "/images/gallery/FotoCouple.webp",
-  "/images/gallery/FotoCouple2.webp",
-  "/images/gallery/FotoCouple3.webp",
-  "/images/gallery/FotoCouple4.webp",
+  { src: "/images/gallery/FotoCouple.webp", position: "object-center lg:object-[50%_50%]" },
+  { src: "/images/gallery/FotoCouple2.webp", position: "object-center lg:object-[50%_35%]" },
+  { src: "/images/gallery/FotoCouple3.webp", position: "object-center lg:object-[50%_15%]" },
+  { src: "/images/gallery/FotoCouple4.webp", position: "object-center lg:object-[50%_0%]" },
 ];
 
 const Gallery = () => {
@@ -46,17 +53,17 @@ const Gallery = () => {
     <>
       <div className="relative w-full overflow-hidden" ref={emblaRef}>
         <div className="flex">
-          {images.map((src, index) => (
+          {images.map((img, index) => (            
             <div
               key={index}
               className="relative flex-none w-full aspect-[390/601] lg:aspect-[1512/945] cursor-pointer"
               onClick={() => handleClick(index)}
             >
               <Image
-                src={src}
+                src={img.src}
                 alt={`Gallery ${index + 1}`}
                 fill
-                className="object-cover object-center"
+                className={`object-cover ${img.position}`}
                 priority={index === 0}
               />
             </div>
@@ -64,11 +71,12 @@ const Gallery = () => {
         </div>
       </div>
 
+      {/* LIGHTBOX POPUP FOTO */}
       <Lightbox
         open={lightboxOpen}
         close={handleClose}
         index={lightboxIndex}
-        slides={images.map((src) => ({ src }))}
+        slides={images.map((img) => ({ src: img.src }))}        
         plugins={[Thumbnails, Zoom, Counter]}
         noScroll={{ disabled: true }}
       />

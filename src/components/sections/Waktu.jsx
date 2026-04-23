@@ -40,6 +40,7 @@ const Waktu = () => {
 
   return (
     <div className="relative w-full overflow-hidden aspect-[390/665] lg:aspect-[1512/1000]">
+
       <picture className="absolute inset-0 w-full h-full">
         <source
           media="(min-width: 1024px)"
@@ -53,7 +54,7 @@ const Waktu = () => {
         />
       </picture>
 
-      {/* Pohon kiri */}
+      {/* POHON KIRI MOBILE*/}
       <Image
         src="/images/waktu/PohonKiri.webp"
         alt="Pohon Kiri"
@@ -63,6 +64,7 @@ const Waktu = () => {
         className="absolute top-0  w-[100vw] h-auto z-10 lg:w-[25vw] lg:hidden"
       />
 
+      {/* POHON KIRI DEKSTOP*/}
       <Image
         src="/images/waktu/PohonKiriD.webp"
         alt="Pohon Kiri"
@@ -71,6 +73,8 @@ const Waktu = () => {
         sizes="100vw"
         className="absolute top-0 left-[-9vw] lg:left-0 w-[100vw] h-auto z-10 lg:w-[50vw] hidden lg:block"
       />
+
+      {/* KUPU KUPU PINK SEDANG*/}
       <Image
         src="/images/hero/KupuKananAtas.gif"
         alt="Kupu kanan tengah"
@@ -90,7 +94,7 @@ const Waktu = () => {
                 "
       />
 
-      {/* Merak kiri bawah */}
+      {/* MERAK */}
       <motion.div
         className="absolute bottom-0 left-0 w-[32vw] lg:w-[15vw] h-auto z-10"
         style={{ transformOrigin: "50% 100%" }}
@@ -112,7 +116,7 @@ const Waktu = () => {
         />
       </motion.div>
 
-      {/* Daun kanan bawah */}
+      {/* DAUN KANAN */}
       <Image
         src="/images/waktu/DaunKanan.webp"
         alt="Daun Kanan"
@@ -122,8 +126,9 @@ const Waktu = () => {
         className="absolute right-0 bottom-0 w-[50vw] lg:w-[30%] h-auto z-30"
       />
 
-      {/* ── KONTEN UTAMA ── */}
+      {/* CONTENT */}
       <div className="absolute inset-0 z-30 flex flex-col items-center text-center px-[5vw] mt-[12.8vw] lg:mt-[6.8vw]">
+        
         {/* Tanggal */}
         <Animate type="fadein">
           <h3 className="font-corsiva text-[6.15vw] lg:text-[3.175vw] text-[#75796A] font-bold">
@@ -199,14 +204,15 @@ const Waktu = () => {
           </Animate>
         </div>
 
+        {/* BUTTON GOOGLE MAPS */}
         <Animate type="fadeup" delay={0.9}>
           <button
             onClick={() =>
-    window.open(
-      "https://maps.google.com/?q=Trans+Convention+Centre+The+Trans+Luxury+Hotel+Jl+Gatot+Subroto+289+Bandung",
-      "_blank",
-    )
-  }
+              window.open(
+                "https://maps.google.com/?q=Trans+Convention+Centre+The+Trans+Luxury+Hotel+Jl+Gatot+Subroto+289+Bandung",
+                "_blank",
+              )
+            }
             className="bg-[#721623] w-[41vw] lg:w-[14.815vw] h-[8.46vw] lg:h-[2.778vw] font-arno font-semibold text-[3.08vw] lg:text-[1.190vw] rounded-full text-white mt-[8vw] lg:mt-[2vw] flex items-center justify-center z-40"
           >
             <span className="translate-y-[0.12em]">GOOGLE MAPS</span>

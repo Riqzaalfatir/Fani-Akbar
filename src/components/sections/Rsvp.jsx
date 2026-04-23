@@ -40,8 +40,10 @@ const Rsvp = () => {
 
   return (
     <div id="rsvp" className="relative w-full overflow-hidden bg-[#6C7852]">
+
       {/* ── WRAPPER: mobile=stack, desktop=2 kolom ── */}
       <div className="flex flex-col lg:grid lg:grid-cols-2">
+
         {/* ── KOLOM KIRI: FOTO (mobile: atas, desktop: kiri) ── */}
         <div className="relative w-full aspect-[390/720] lg:aspect-[756/945] hidden lg:block">
           <img
@@ -54,23 +56,8 @@ const Rsvp = () => {
 
         {/* ── KOLOM KANAN: KONTEN RSVP (mobile: bawah, desktop: kanan) ── */}
         <div className="relative w-full overflow-hidden aspect-[390/720] lg:aspect-[756/945] bg-[#6C7852]">
-          {/* <Image
-            src="/images/doa/layer.png"
-            alt="Background"
-            fill
-            className="object-cover object-[50%_30%] lg:hidden"
-            priority
-          />
-
-          <div
-            className="absolute inset-0 w-full h-full hidden lg:block"
-            style={{
-              backgroundImage: "url('/images/doa/layer.png')",
-              backgroundRepeat: "repeat",
-              backgroundSize: "auto",
-            }}
-          /> */}
-
+        
+        {/* LAYER */}
           <div
             className="absolute inset-0 w-full h-full"
             style={{
@@ -80,7 +67,10 @@ const Rsvp = () => {
             }}
           />
 
+        {/* CONTENT */}
           <div className="absolute inset-0 flex items-center justify-center z-10">
+
+            {/* FRAME */}
             <div className="relative w-[98vw] lg:w-[40vw]">
               <Image
                 src="/images/rsvp/Frame.webp"
@@ -119,7 +109,7 @@ const Rsvp = () => {
                   </h3>
                 </Animate>
 
-                {/* Tombol HADIR & TIDAK HADIR */}
+                {/* BUTTON HADIR & TIDAK HADIR */}
                 <div className="flex flex-row gap-[3.85vw] lg:gap-[1.5vw] mt-[9vw] lg:mt-[2.5vw]">
 
                   <Animate type="fadeleft">
@@ -136,7 +126,6 @@ const Rsvp = () => {
                   </button>
                   </Animate>
 
-                  {/* Tombol TIDAK HADIR */}
                   <Animate type="faderight">
                   <button
                     onClick={() => setSelected("tidak_hadir")}
@@ -158,7 +147,7 @@ const Rsvp = () => {
                 </p>
                 </Animate>
 
-                {/* Tombol Konfirmasi */}
+                {/* BUTTON Konfirmasi */}
                 <Animate type="fadeup">
                 <button
                   onClick={handleKonfirmasi}
@@ -176,7 +165,7 @@ const Rsvp = () => {
                 </p>
                 </Animate>
 
-                {/* Tombol WA */}
+                {/* BUTTON WA */}
                 {/* Tombol WA */}
                 <Animate type="fadeup">
                 <button

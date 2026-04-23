@@ -6,15 +6,15 @@ import { motion, AnimatePresence } from "framer-motion";
 const Opening = ({ setStart, namaTamu = "Sela" }) => {
   const [open, setOpen] = useState(true);
 
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    window.scrollTo(0, 0); // ✅ Paksa scroll ke atas saat popup muncul
-  }, []);
+  // useEffect(() => {
+  //   document.body.style.overflow = "hidden";
+  //   window.scrollTo(0, 0); // AKTIF JIKA USER REFRESH KEMBALI KE SECTION PALING ATAS
+  // }, []);
 
   const handleOpen = () => {
     setOpen(false);
     document.body.style.overflow = "auto";
-    // ✅ Delay setStart sampai animasi exit selesai (800ms)
+
     setTimeout(() => {
       setStart(true);
     }, 800);
@@ -27,20 +27,23 @@ const Opening = ({ setStart, namaTamu = "Sela" }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }} // ✅ Lebih lama & smooth
+          transition={{ duration: 0.8, ease: "easeInOut" }} 
           className="fixed inset-0 z-[100] bg-black/60 lg:bg-black/50 backdrop-blur-lg md:backdrop-blur-md flex justify-center items-center px-4"
         >
+
+          {/* CONTENT CARD */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.92, y: 30 }} // ✅ Mulai dari bawah
+            initial={{ opacity: 0, scale: 0.92, y: 30 }} 
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.94, y: 40 }} // ✅ Turun saat keluar
+            exit={{ opacity: 0, scale: 0.94, y: 40 }} 
             transition={{
               duration: 0.8,
-              ease: [0.4, 0, 0.2, 1], // ✅ Cubic bezier lebih natural
+              ease: [0.4, 0, 0.2, 1], 
             }}
             className="relative bg-[#F4F1ED] rounded-xl md:rounded-2xl overflow-hidden w-[290px] h-[430px] md:w-[416px] md:h-[540px] shadow-xl flex flex-col z-[100]"
           >
-            {/* Foto prewed */}
+
+            {/* FOTO */}
             <div className="relative w-full h-[182px] md:h-[220px] overflow-hidden z-10">
               <Image
                 src="/images/popup/Opening.webp"
@@ -50,7 +53,7 @@ const Opening = ({ setStart, namaTamu = "Sela" }) => {
               />
             </div>
 
-            {/* ✅ Background Gunung */}
+            {/* BG GUNUNG */}
             <div className="absolute bottom-0 left-0 right-0 top-[182px] md:top-[220px] z-0">
               <Image
                 src="/images/waktu/BgGunung.webp"
@@ -61,7 +64,7 @@ const Opening = ({ setStart, namaTamu = "Sela" }) => {
               />
             </div>
 
-            {/* Daun kanan */}
+            {/* DAUN KANAN */}
             <Image
               src="/images/hero/Daun-Kanan.webp"
               alt="Daun Kanan"
@@ -70,6 +73,8 @@ const Opening = ({ setStart, namaTamu = "Sela" }) => {
               sizes="100vw"
               className="absolute right-[0%] bottom-[0%] w-[35%] lg:w-[37%] h-auto z-30 pointer-events-none"
             />
+
+            {/* POHON PUTUS */}
             <Image
               src="/images/popup/PohonPutus.webp"
               alt="Pohon Kiri"
@@ -79,17 +84,17 @@ const Opening = ({ setStart, namaTamu = "Sela" }) => {
               className="absolute left-01 -bottom-10 w-[83.5%] h-auto z-20 pointer-events-none"
             />
 
-            {/* Bunga kiri */}
+            {/* BUNGA KIRI */}
             <Image
               src="/images/popup/BungaKiriAtas.webp"
-              alt="Merak Kiri"
+              alt="Bunga Kiri"
               width={0}
               height={0}
               sizes="100vw"
               className="absolute left-[0%] top-[40.5%] w-[30%] lg:w-[25%] h-auto z-20 pointer-events-none"
             />
 
-            {/* Konten teks */}
+            {/* KONTENT TEXT */}
             <div className="relative z-40 flex flex-col items-center text-center px-4 pt-[28px] md:pt-[25px] pb-[40px] md:pb-[0px] flex-1 leading-none">
               <p className="text-[12px] md:text-[14px] text-[#6C7852] font-arno font-semibold">
                 THE WEDDING OF
@@ -108,12 +113,15 @@ const Opening = ({ setStart, namaTamu = "Sela" }) => {
                 <br />
                 for any misspelling of names or titles.
               </p>
+
+              {/* BUTTON OPENING */}
               <button
-  onClick={handleOpen}
-  className="bg-[#721623] flex items-center justify-center text-white w-[184px] h-[33px] md:w-[220px] md:h-[40px] rounded-full uppercase font-arno font-semibold text-[12px] lg:text-[18px] mt-[12px] md:mt-[20px]"
->
-  <span className="translate-y-[0.12em]">Open Invitation</span>
-</button>
+                onClick={handleOpen}
+                className="bg-[#721623] flex items-center justify-center text-white w-[184px] h-[33px] md:w-[220px] md:h-[40px] rounded-full uppercase font-arno font-semibold text-[12px] lg:text-[18px] mt-[12px] md:mt-[20px]"
+              >
+                <span className="translate-y-[0.12em]">Open Invitation</span>
+              </button>
+
             </div>
           </motion.div>
         </motion.div>

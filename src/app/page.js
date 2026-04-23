@@ -12,12 +12,11 @@ import Header from "@/components/layout/Header"
 import Opening from "@/components/popup/Opening"
 import Gallery from "@/components/sections/Gallery"
 
-const page = () => {
+const Page = () => {
   const [start, setStart] = useState(false);
 
   return (
     <>
-      {/* Konten selalu render normal, tidak di-invisible */}
       <Header/>
       <Hero/>
       <TanggalLokasi/>
@@ -33,4 +32,4 @@ const page = () => {
     </>
   )
 }
-export default page
+export default Page

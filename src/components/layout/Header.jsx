@@ -1,33 +1,33 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { FiMenu } from "react-icons/fi"
-import { motion, AnimatePresence } from "framer-motion"
+import { useState } from "react";
+import { FiMenu } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   const linkMenu = [
     { name: "PROFIL", link: "#hero" },
     { name: "TANGGAL DAN LOKASI", link: "#tanggal" },
     { name: "RSVP", link: "#rsvp" },
     { name: "GALLERI", link: "#galleri" },
-  ]
+  ];
 
   const container = {
     hidden: {
       transition: {
         staggerChildren: 0.08,
-        staggerDirection: -1
-      }
+        staggerDirection: -1,
+      },
     },
     show: {
       transition: {
         staggerChildren: 0.08,
-        delayChildren: 0.1
-      }
-    }
-  }
+        delayChildren: 0.1,
+      },
+    },
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, x: -10, skewX: -10 },
@@ -37,16 +37,17 @@ const Header = () => {
       skewX: 0,
       transition: {
         duration: 1,
-        ease: [0.4, 0, 0.2, 1]
-      }
-    }
-  }
+        ease: [0.4, 0, 0.2, 1],
+      },
+    },
+  };
 
   return (
-<div 
-  className="fixed top-0 left-0 w-full z-50 px-[4vw] py-[3vw] lg:px-[1.2vw] lg:py-[1vw]"
-  style={{ willChange: "transform", transform: "translateZ(0)" }}
->
+    <div
+      className="fixed top-0 left-0 w-full z-50 px-[4vw] py-[3vw] lg:px-[1.2vw] lg:py-[1vw]"
+      style={{ willChange: "transform", transform: "translateZ(0)" }}
+    >
+
       {/* HAMBURGER */}
       {!open && (
         <motion.button
@@ -68,15 +69,14 @@ const Header = () => {
             animate={{ opacity: 1 }}
             exit={{
               opacity: 0,
-              transition: { duration: 0.3 }
+              transition: { duration: 0.3 },
             }}
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
             style={{ originX: 0, originY: 0 }}
-            
-className="absolute top-[4vw] left-[4vw] lg:top-[2vw] lg:left-[2.5vw] bg-[#7B7B7B]/70 py-[4vw] px-[5vw] lg:py-[1.5vw] lg:px-[1.8vw] text-white w-[65.4vw] lg:w-[29.4vw]"
+            className="absolute top-[4vw] left-[4vw] lg:top-[2vw] lg:left-[2.5vw] bg-[#7B7B7B]/70 py-[4vw] px-[5vw] lg:py-[1.5vw] lg:px-[1.8vw] text-white w-[65.4vw] lg:w-[29.4vw]"
           >
 
-            {/* CLOSE */}
+            {/* CLOSE X */}
             <motion.button
               onClick={() => setOpen(false)}
               initial={{ opacity: 0 }}
@@ -95,7 +95,7 @@ className="absolute top-[4vw] left-[4vw] lg:top-[2vw] lg:left-[2.5vw] bg-[#7B7B7
               variants={container}
               initial="hidden"
               animate="show"
-className="pt-[6vw] lg:pt-[2vw] pl-[4vw] lg:pl-[1vw] space-y-[1.5vw] lg:space-y-[0.8vw] text-[3.08vw] font-noto lg:text-[1.10vw] tracking-[0.2em] text-white ont-medium flex flex-col"
+              className="pt-[6vw] lg:pt-[2vw] pl-[4vw] lg:pl-[1vw] space-y-[1.5vw] lg:space-y-[0.8vw] text-[3.08vw] font-noto lg:text-[1.10vw] tracking-[0.2em] text-white ont-medium flex flex-col"
             >
               {linkMenu.map((menu) => (
                 <motion.a
@@ -103,7 +103,7 @@ className="pt-[6vw] lg:pt-[2vw] pl-[4vw] lg:pl-[1vw] space-y-[1.5vw] lg:space-y-
                   href={menu.link}
                   variants={itemVariants}
                   onClick={() => {
-                    setTimeout(() => setOpen(false), 200)
+                    setTimeout(() => setOpen(false), 200);
                   }}
                   className="group relative flex items-center cursor-pointer"
                 >
@@ -120,22 +120,20 @@ className="pt-[6vw] lg:pt-[2vw] pl-[4vw] lg:pl-[1vw] space-y-[1.5vw] lg:space-y-
               ))}
             </motion.ul>
 
-            {/* FOOTER TEXT */}
+            {/* TEXT BAWAH */}
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.6, ease: "easeOut" }}
-className="pt-[8vw] lg:pt-[2.5vw] pl-[4vw] lg:pl-[1vw] text-[2.05vw] lg:text-[0.97vw] font-sans font-light pb-[2vw] lg:pb-[1vw]"
+              className="pt-[8vw] lg:pt-[2.5vw] pl-[4vw] lg:pl-[1vw] text-[2.05vw] lg:text-[0.97vw] font-sans font-light pb-[2vw] lg:pb-[1vw]"
             >
               Select a section above to continue
             </motion.p>
-
           </motion.div>
         )}
       </AnimatePresence>
-
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

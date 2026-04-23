@@ -1,16 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",  // ← ini juga harus ada!
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",  
   ],
   theme: {
     extend: {
-      fontFamily: {  // ← ini yang kurang
+      fontFamily: {  
         'arno': ['var(--font-arno-pro)'],
         'arnoCaption': ['var(--font-arno-caption)'],
         'corsiva': ['var(--font-corsiva)'],
         'zapfino': ["var(--font-zapfino)"],
-          'noto': ['var(--font-noto-sans)'], // ← tambah ini
+          'noto': ['var(--font-noto-sans)'], 
 
       },
     },

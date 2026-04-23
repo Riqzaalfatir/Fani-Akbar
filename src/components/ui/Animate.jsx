@@ -2,11 +2,14 @@
 import { motion } from "framer-motion";
 
 const config = {
-  fadein:    { initial: { opacity: 0 },                     animate: { opacity: 1 } },
-  fadeup:    { initial: { opacity: 0, y: 40 },              animate: { opacity: 1, y: 0 } },
-  fadelift:  { initial: { opacity: 0, y: 50, scale: 0.96 }, animate: { opacity: 1, y: 0, scale: 1 } },
-  fadeleft:  { initial: { opacity: 0, x: -50 },             animate: { opacity: 1, x: 0 } },
-  faderight: { initial: { opacity: 0, x: 50 },              animate: { opacity: 1, x: 0 } },
+  fadein: { initial: { opacity: 0 }, animate: { opacity: 1 } },
+  fadeup: { initial: { opacity: 0, y: 40 }, animate: { opacity: 1, y: 0 } },
+  fadelift: {
+    initial: { opacity: 0, y: 50, scale: 0.96 },
+    animate: { opacity: 1, y: 0, scale: 1 },
+  },
+  fadeleft: { initial: { opacity: 0, x: -50 }, animate: { opacity: 1, x: 0 } },
+  faderight: { initial: { opacity: 0, x: 50 }, animate: { opacity: 1, x: 0 } },
 };
 
 const Animate = ({
@@ -20,7 +23,7 @@ const Animate = ({
   const { initial, animate } = config[type] ?? config.fadeup;
 
   return (
-        <motion.div
+    <motion.div
       className={className}
       initial={initial}
       whileInView={animate}
