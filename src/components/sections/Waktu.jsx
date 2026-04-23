@@ -202,11 +202,11 @@ const Waktu = () => {
         <Animate type="fadeup" delay={0.9}>
           <button
             onClick={() =>
-              window.open(
-                "https://www.google.com/maps/place/?q=place_id:ChIJo3iFhtTnaC4R8SG-GaIO9fQ",
-                "_blank",
-              )
-            }
+    window.open(
+      "https://maps.google.com/?q=Trans+Convention+Centre+The+Trans+Luxury+Hotel+Jl+Gatot+Subroto+289+Bandung",
+      "_blank",
+    )
+  }
             className="bg-[#721623] w-[41vw] lg:w-[14.815vw] h-[8.46vw] lg:h-[2.778vw] font-arno font-semibold text-[3.08vw] lg:text-[1.190vw] rounded-full text-white mt-[8vw] lg:mt-[2vw] flex items-center justify-center z-40"
           >
             <span className="translate-y-[0.12em]">GOOGLE MAPS</span>
