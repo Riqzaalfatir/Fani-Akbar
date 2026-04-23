@@ -115,20 +115,20 @@ const DoaDanUcapan = () => {
                   value={nama}
                   placeholder="Desy (Tester)"
                   onChange={(e) => setNama(e.target.value)}
-                  className="w-full mt-[6vw] lg:mt-[0vw] text-[#6C7852] rounded-full font-arno font-semibold text-[3vw] lg:text-[1.3vw] bg-transparent border-[0.5px] border-[#6C7852] px-[1vw] h-[8vw] lg:h-[3vw] outline-none placeholder:text-[#6C7852]"
+                  className="w-full mt-[6vw] lg:mt-[0vw] text-[#6C7852] rounded-full font-arno font-semibold text-[3vw] lg:text-[1.3vw] bg-transparent border-[0.5px] border-[#6C7852] px-[4vw] lg:px-[2vw] h-[8vw] lg:h-[3vw] outline-none placeholder:text-[#6C7852]"
                 />
 
                 {/* Textarea Pesan */}
                 <textarea
                   value={pesan}
                   onChange={(e) => setPesan(e.target.value)}
-                  className="w-full mt-[2.5vw] lg:mt-[0vw] font-arno rounded-2xl text-[3vw] lg:text-[1.3vw] bg-transparent border-[0.5px] border-[#6C7852] px-[1vw] py-[2vw] lg:py-[1vw] outline-none h-[20vw] lg:h-[19vw] resize-none font-semibold text-[#6C7852]"
+                  className="w-full mt-[2.5vw] lg:mt-[0.35vw] font-arno rounded-2xl text-[3vw] lg:text-[1.3vw] bg-transparent border-[0.5px] border-[#6C7852] px-[4vw] lg:px-[2vw] py-[2vw] lg:py-[1vw] outline-none h-[20vw] lg:h-[19vw] resize-none font-semibold text-[#6C7852]"
                 />
 
                 {/* Button Kirim */}
 <button
   onClick={handleSubmit}
-  className="bg-[#6C7852] mt-[2.5vw] lg:mt-[0vw] rounded-full h-[8vw] lg:h-[3vw] text-[3vw] lg:text-[1.3vw] font-arno font-semibold uppercase flex items-center justify-center gap-[0.8vw] text-[#DADAD9] pt-[0.3vw] lg:pt-[0.15vw]"
+  className="bg-[#6C7852] mt-[2.5vw] lg:mt-[0.35vw] rounded-full h-[8vw] lg:h-[3vw] text-[3vw] lg:text-[1.3vw] font-arno font-semibold uppercase flex items-center justify-center gap-[0.8vw] text-[#DADAD9] pt-[0.3vw] lg:pt-[0.15vw]"
 >
   <Image
     src="/images/doa/Panah.svg"
@@ -147,7 +147,7 @@ const DoaDanUcapan = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-                  className={`w-full mt-[2.5vw] lg:mt-[0vw] py-[3vw] lg:py-[1.5vw] px-[4vw] lg:px-[2vw] ${
+                  className={`w-full mt-[2.5vw] lg:mt-[1.35vw] py-[3vw] lg:py-[1.5vw] px-[4vw] lg:px-[2vw] ${
                     showAll
                       ? "bg-transparent"
                       : "bg-[#6C7852] rounded-2xl h-[80vw] lg:h-[36vw] overflow-y-auto"
@@ -219,7 +219,7 @@ const DoaDanUcapan = () => {
                 {/* Button See All / Kembali */}
                 <motion.button
   onClick={() => setShowAll(!showAll)}
-  className="bg-[#6C7852] font-semibold mt-[2.5vw] lg:mt-[0vw] h-[8vw] lg:h-[3vw] text-[3vw] lg:text-[1.3vw] font-arno text-[#FEFBF0] uppercase flex items-center justify-center gap-[0.8vw] rounded-full pt-[0.3vw] lg:pt-[0.15vw]"
+  className="bg-[#6C7852] font-semibold mt-[2.5vw] lg:mt-[0.5vw] h-[8vw] lg:h-[3vw] text-[3vw] lg:text-[1.3vw] font-arno text-[#FEFBF0] uppercase flex items-center justify-center gap-[0.8vw] rounded-full pt-[0.3vw] lg:pt-[0.15vw]"
 >
   <Image
     src="/images/doa/Pesan.svg"

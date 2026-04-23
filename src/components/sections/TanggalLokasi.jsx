@@ -141,19 +141,19 @@ const TanggalLokasi = () => {
           </Animate>
 
           <Animate type="fadeup" delay={0.2}>
-          <h1 className="font-zapfino text-[4.6vw] text-[#CFAA67] mt-[14vw] lg:text-[2.116vw] lg:mt-[5.5vw]">
+          <h1 className="font-zapfino text-[4.6vw] text-[#CFAA67] mt-[11.5vw] lg:text-[2.116vw] lg:mt-[6vw]">
             dr. Herfani Hemacindy Dewi
           </h1>
           </Animate>
 
           <Animate type="fadeup" delay={0.3}>
-          <p className="font-arnoCaption font-bold text-[3vw] text-[#75796A] mt-[1vw] lg:text-[1.190vw] lg:mt-[0.5vw]">
+          <p className="font-arnoCaption font-bold text-[3vw] text-[#75796A] mt-[1vw] lg:text-[1.190vw] lg:mt-[1vw]">
             Putri dari
           </p>
           </Animate>
 
             <Animate type="fadeup" delay={0.4}>
-          <h2 className="font-arno font-semibold text-[3vw] text-[#75796A] mt-[5vw] leading-relaxed lg:text-[1.190vw] lg:mt-[1vw]">
+          <h2 className="font-arno font-semibold text-[3vw] text-[#75796A] mt-[5vw] leading-relaxed lg:text-[1.190vw] lg:mt-[1.5vw]">
             Bpk. Mayjen TNI dr. Hadi Juanda, Sp.PD., M.A.R.S., CFrA.
             <br />
             Ibu dr. Heka Mayasari, Sp.A.
@@ -161,19 +161,19 @@ const TanggalLokasi = () => {
                     </Animate>
 
           <Animate type="fadeup" delay={0.5}>
-          <h1 className="font-corsiva text-[12vw] text-[#CFAA67] mt-[4vw] lg:text-[3.174vw] lg:mt-[0.8vw]">
+          <h1 className="font-corsiva text-[12vw] text-[#CFAA67] mt-[4vw] lg:text-[3.174vw] lg:mt-[1.3vw]">
             &
           </h1>
           </Animate>
 
           <Animate type="fadeup" delay={0.6}>
-          <h1 className="font-zapfino text-[4.61vw] text-[#CFAA67] mt-[10vw] lg:text-[2.116vw] lg:mt-[5vw]">
+          <h1 className="font-zapfino text-[4.61vw] text-[#CFAA67] mt-[7.5vw] lg:text-[2.116vw] lg:mt-[5.5vw]">
             Lettu Ckm dr. Akbar Nugraha
           </h1>
           </Animate>
 
           <Animate type="fadeup" delay={0.7}>
-          <p className="font-arnoCaption font-bold text-[3vw] text-[#75796A] mt-[1vw] lg:text-[1.2vw] lg:mt-[1vw]">
+          <p className="font-arnoCaption font-bold text-[3vw] text-[#75796A] mt-[1vw] lg:text-[1.2vw] lg:mt-[1.5vw]">
             Putra dari
           </p>
           </Animate>

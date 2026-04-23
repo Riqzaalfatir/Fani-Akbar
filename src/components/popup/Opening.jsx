@@ -110,7 +110,7 @@ const Opening = ({ setStart, namaTamu = "Sela" }) => {
               </p>
               <button
                 onClick={handleOpen}
-                className="bg-[#721623] text-white w-[184px] h-[33px] md:w-[220px] md:h-[40px] rounded-full uppercase font-arno font-semibold text-[12px] lg:text-[18px] mt-[12px] md:mt-[20px]"
+                className="bg-[#721623] pt-[0.4vw] lg:pt-[0.25vw] leading-[1] text-white w-[184px] h-[33px] md:w-[220px] md:h-[40px] rounded-full uppercase font-arno font-semibold text-[12px] lg:text-[18px] mt-[12px] md:mt-[20px]"
               >
                 Open Invitation
               </button>
