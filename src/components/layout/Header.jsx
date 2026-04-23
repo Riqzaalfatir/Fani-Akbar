@@ -3,16 +3,15 @@
 import { useState } from "react"
 import { FiMenu } from "react-icons/fi"
 import { motion, AnimatePresence } from "framer-motion"
-import Image from "next/image"
 
 const Header = () => {
   const [open, setOpen] = useState(false)
 
   const linkMenu = [
     { name: "PROFIL", link: "#hero" },
-    { name: "TANGGAL DAN LOKASI", link: "#profile" },
-    { name: "RSVP", link: "#waktu" },
-    { name: "GALLERI", link: "#dresscode" },
+    { name: "TANGGAL DAN LOKASI", link: "#tanggal" },
+    { name: "RSVP", link: "#rsvp" },
+    { name: "GALLERI", link: "#galleri" },
   ]
 
   const container = {
@@ -44,8 +43,10 @@ const Header = () => {
   }
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50 lg:hidden px-4 py-3">
-
+<div 
+  className="fixed top-0 left-0 w-full z-50 px-[4vw] py-[3vw] lg:px-[1.2vw] lg:py-[1vw]"
+  style={{ willChange: "transform", transform: "translateZ(0)" }}
+>
       {/* HAMBURGER */}
       {!open && (
         <motion.button
@@ -53,8 +54,9 @@ const Header = () => {
           whileTap={{ scale: 0.92 }}
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 250, damping: 20 }}
+          className="text-[#C3C3C3] text-[7vw] lg:text-[1.9vw]"
         >
-          <FiMenu size={28} className="text-[#C3C3C3]" />
+          <FiMenu />
         </motion.button>
       )}
 
@@ -70,7 +72,8 @@ const Header = () => {
             }}
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
             style={{ originX: 0, originY: 0 }}
-            className="absolute top-4 left-4 bg-[#7B7B7B]/70 py-4 md:p-8 text-white w-full max-w-[255px] md:max-w-[280px] z-0"
+            
+className="absolute top-[4vw] left-[4vw] lg:top-[2vw] lg:left-[2.5vw] bg-[#7B7B7B]/70 py-[4vw] px-[5vw] lg:py-[1.5vw] lg:px-[1.8vw] text-white w-[65.4vw] lg:w-[29.4vw]"
           >
 
             {/* CLOSE */}
@@ -80,9 +83,11 @@ const Header = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
-              className="absolute -top-2.5 left-2"
+              className="absolute top-[-3vw] left-[2vw] lg:top-[-1vw] lg:left-[0.2vw]"
             >
-              <p className="font-light text-[32px] text-white font-ibm">x</p>
+              <p className="font-light text-[10vw] lg:text-[3.5vw] text-white font-ibm">
+                ×
+              </p>
             </motion.button>
 
             {/* MENU */}
@@ -90,7 +95,7 @@ const Header = () => {
               variants={container}
               initial="hidden"
               animate="show"
-              className="pt-4 pl-9 md:pl-4 space-y-1.5 text-[12px] md:text-[14px] tracking-widest text-white font-sans font-medium flex flex-col"
+className="pt-[6vw] lg:pt-[2vw] pl-[4vw] lg:pl-[1vw] space-y-[1.5vw] lg:space-y-[0.8vw] text-[3.08vw] font-noto lg:text-[1.10vw] tracking-[0.2em] text-white ont-medium flex flex-col"
             >
               {linkMenu.map((menu) => (
                 <motion.a
@@ -103,24 +108,24 @@ const Header = () => {
                   className="group relative flex items-center cursor-pointer"
                 >
                   {/* PANAH */}
-                  <span className="absolute left-0 opacity-0 transition-all duration-500 ease-out group-hover:opacity-100 font-sans">
+                  <span className="absolute left-0 opacity-0 transition-all duration-500 ease-out group-hover:opacity-100">
                     →
                   </span>
 
                   {/* TEXT */}
-                  <span className="transition-all duration-300 ease-out group-hover:translate-x-5">
+                  <span className="transition-all duration-300 ease-out group-hover:translate-x-[1vw] lg:group-hover:translate-x-[1.5vw]">
                     {menu.name}
                   </span>
                 </motion.a>
               ))}
             </motion.ul>
 
-            {/* TEXT */}
+            {/* FOOTER TEXT */}
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.6, ease: "easeOut" }}
-              className="pt-[61px] text-white ml-9 md:ml-4 text-[8px] md:text-[12px] font-sans font-light pb-3"
+className="pt-[8vw] lg:pt-[2.5vw] pl-[4vw] lg:pl-[1vw] text-[2.05vw] lg:text-[0.97vw] font-sans font-light pb-[2vw] lg:pb-[1vw]"
             >
               Select a section above to continue
             </motion.p>

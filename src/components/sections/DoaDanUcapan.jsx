@@ -27,13 +27,7 @@ const DoaDanUcapan = () => {
       alert("Please fill in all fields");
       return;
     }
-
-    const newPesan = {
-      id: Date.now(),
-      nama,
-      pesan,
-    };
-
+    const newPesan = { id: Date.now(), nama, pesan };
     setPesanList((prev) => [newPesan, ...prev]);
     setShowPopup(true);
     setNama("");
@@ -42,7 +36,7 @@ const DoaDanUcapan = () => {
 
   return (
     <>
-      <section className="w-full relative">
+      <section className="w-full relative overflow-hidden">
         {/* Background */}
         <Image
           src="/images/doa/BgGunung.webp"
@@ -52,40 +46,58 @@ const DoaDanUcapan = () => {
           priority
         />
 
-
+        {/* Pohon Kiri - mobile only */}
         <Image
           src="/images/doa/PohonKiri.webp"
           alt="Pohon Kiri"
           width={0}
           height={0}
           sizes="100vw"
-          className="absolute top-0 left-0 w-[70vw] h-auto z-10 lg:w-[25vw]"
+          className="absolute top-0 left-0 w-[70vw] h-auto z-10 lg:hidden"
         />
 
+        {/* Pohon Kanan - mobile */}
         <Image
           src="/images/doa/PohonKanan.png"
           alt="Pohon Kanan"
           width={0}
           height={0}
           sizes="100vw"
-          className="absolute top-0 right-0 w-[100vw] h-auto z-10 lg:w-[25vw]"
+          className="absolute top-0 right-0 w-[95vw] h-auto z-10 lg:w-[25vw] lg:hidden"
+        />
+
+        {/* Pohon Kecil Kiri - bottom deco */}
+        <Image
+          src="/images/doa/PohonKecilKiri.webp"
+          alt="Dekorasi Bawah Kiri"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="absolute bottom-0 lg:bottom-[-6vw] left-0 lg:left-[-2vw]  w-[98vw] lg:w-[72vw] h-auto z-10"
+        />
+
+        {/* Pohon Kanan Desktop */}
+        <Image
+          src="/images/tanggal/PohonKanan.webp"
+          alt="Ornament"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="absolute bottom-0 right-0 w-[53.5vw] h-auto z-10 hidden lg:block"
         />
 
         {/* Konten */}
         <div className="relative z-10">
-          {/* 
-            Mobile  : py-[80px]
-            Desktop : pt-[130px] pb-[9px]
-            Container width desktop: 564px (max-w-[564px])
-          */}
-          <div className="max-w-[564px] mx-auto px-10 md:px-4 lg:px-0 pt-[80px] pb-[80px] lg:pt-[100px] lg:pb-[9px]">
+          <div className="w-[72.8vw] lg:w-[39.2vw] mx-auto pt-[20vw] pb-[20vw] lg:pt-[7.6vw] lg:pb-[1.5vw]"
+>
             <div className="flex flex-col items-center">
+
               <motion.h2
                 initial={{ opacity: 0, y: 80 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-                className="font-corsiva font-bold text-[24px] lg:text-[46px] tracking-[1px] text-[#75796A] mb-10 lg:mb-6"
+                className="font-corsiva font-bold text-[6vw] lg:text-[3.4vw] tracking-[1px] text-[#75796A] mb-[5vw] lg:mb-[2vw]"
               >
                 Doa & Ucapan
               </motion.h2>
@@ -95,7 +107,7 @@ const DoaDanUcapan = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-                className="w-full flex flex-col gap-4"
+                className="w-full flex flex-col gap-[2vw] lg:gap-[1vw]"
               >
                 {/* Input Nama */}
                 <input
@@ -103,30 +115,31 @@ const DoaDanUcapan = () => {
                   value={nama}
                   placeholder="Desy (Tester)"
                   onChange={(e) => setNama(e.target.value)}
-                  className="w-full text-slate-200 rounded-full font-arno text-[12px] lg:text-[18px] bg-transparent border-[0.5px] border-[#6C7852] px-3 h-[33px] lg:h-[40px] outline-none placeholder:text-[#6C7852]"
+                  className="w-full mt-[6vw] lg:mt-[0vw] text-[#6C7852] rounded-full font-arno font-semibold text-[3vw] lg:text-[1.3vw] bg-transparent border-[0.5px] border-[#6C7852] px-[1vw] h-[8vw] lg:h-[3vw] outline-none placeholder:text-[#6C7852]"
                 />
 
                 {/* Textarea Pesan */}
                 <textarea
                   value={pesan}
                   onChange={(e) => setPesan(e.target.value)}
-                  className="w-full font-arno rounded-2xl text-[12px] lg:text-[18px] bg-transparent border-[0.5px] border-[#6C7852] px-3 py-2 outline-none text-slate-200 h-[60px] lg:h-[261px]"
-                ></textarea>
+                  className="w-full mt-[2.5vw] lg:mt-[0vw] font-arno rounded-2xl text-[3vw] lg:text-[1.3vw] bg-transparent border-[0.5px] border-[#6C7852] px-[1vw] py-[2vw] lg:py-[1vw] outline-none h-[20vw] lg:h-[19vw] resize-none font-semibold text-[#6C7852]"
+                />
 
                 {/* Button Kirim */}
-                <button
-                  onClick={handleSubmit}
-                  className="bg-[#6C7852] rounded-full h-[33px] lg:h-[40px] text-[12px] lg:text-[18px] font-arno font-semibold uppercase flex items-center justify-center gap-1.5 text-[#DADAD9]"
-                >
-                  <Image
-                    src="/images/doa/Panah.svg"
-                    alt="Kirim"
-                    width={15}
-                    height={19}
-                    className="object-cover w-[15px] h-[19px] lg:w-[20px] lg:h-[20px]"
-                  />
-                  KIRIM UCAPAN
-                </button>
+<button
+  onClick={handleSubmit}
+  className="bg-[#6C7852] mt-[2.5vw] lg:mt-[0vw] rounded-full h-[8vw] lg:h-[3vw] text-[3vw] lg:text-[1.3vw] font-arno font-semibold uppercase flex items-center justify-center gap-[0.8vw] text-[#DADAD9] pt-[0.3vw] lg:pt-[0.15vw]"
+>
+  <Image
+    src="/images/doa/Panah.svg"
+    alt="Kirim"
+    width={0}
+    height={0}
+    sizes="100vw"
+    className="w-[3.5vw] h-auto lg:w-[1.4vw]"
+  />
+  KIRIM UCAPAN
+</button>
 
                 {/* Message List Box */}
                 <motion.div
@@ -134,28 +147,29 @@ const DoaDanUcapan = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-                  className={`w-full max-w-none mt-18 py-4 px-4 lg:px-6 ${
+                  className={`w-full mt-[2.5vw] lg:mt-[0vw] py-[3vw] lg:py-[1.5vw] px-[4vw] lg:px-[2vw] ${
                     showAll
                       ? "bg-transparent"
-                      : "bg-[#6C7852] rounded-3xl h-[360px] lg:h-[499px] overflow-y-auto"
+                      : "bg-[#6C7852] rounded-2xl h-[80vw] lg:h-[36vw] overflow-y-auto"
                   }`}
                 >
                   {!showAll ? (
                     pesanList.slice(0, 8).map((item, index, array) => (
                       <div key={item.id}>
-                        <p className="text-[#DADAD9] font-arno font-bold text-[12px] lg:text-[18px] mb-0.5 lg:mb-3 font-sweetsans">
+                        <p className="text-[#DADAD9] font-arnoCaption font-bold text-[3vw] lg:text-[1.3vw] mb-[1vw] lg:mb-[0.5vw]">
                           {item.nama}
                         </p>
-                        <p className="text-[#DADAD9] font-arno text-[12px] lg:text-[18px] lg:font-normal tracking-[0.5px]">
+                        <p className="text-[#DADAD9] font-arno font-semibold text-[3vw] lg:text-[1.3vw] tracking-[0.5px]">
                           {item.pesan}
                         </p>
                         {index !== array.length - 1 && (
-                          <div className="border-t border-[#DADAD9]/40 border-[1px] my-3"></div>
+                          <div className="border-t border-[#DADAD9]/40 my-[2vw] lg:my-[1vw]" />
                         )}
                       </div>
                     ))
                   ) : (
-                    <div className="max-w-[564px] relative left-1/2 -translate-x-1/2 w-screen px-10 lg:px-0">
+                    // showAll: full width grid, tidak pakai w-screen
+                    <div className="w-full">
                       <motion.div
                         layout
                         initial="hidden"
@@ -164,7 +178,7 @@ const DoaDanUcapan = () => {
                           hidden: {},
                           visible: { transition: { staggerChildren: 0.1 } },
                         }}
-                        className="grid grid-cols-2 gap-3"
+                        className="grid grid-cols-2 gap-[2vw] lg:gap-[1vw]"
                       >
                         {pesanList.map((item) => (
                           <motion.div
@@ -175,18 +189,18 @@ const DoaDanUcapan = () => {
                             }}
                             transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
                             onClick={() => setSelectedMessage(item)}
-                            className="min-h-[150px] lg:min-h-[190px] rounded-md overflow-hidden shadow-md bg-[#F4F8F5] font-sweetsans flex flex-col"
+                            className="min-h-[30vw] lg:min-h-[14vw] rounded-md overflow-hidden shadow-md bg-[#F4F8F5] flex flex-col cursor-pointer"
                           >
-                            <div className="p-2 text-[#202F26] relative flex-1 flex flex-col justify-center">
-                              <p className="text-[40px] lg:text-[60px] text-slate-500 opacity-30 leading-none absolute top-2 left-3">
+                            <div className="p-[2vw] lg:p-[1vw] relative flex-1 flex flex-col justify-center">
+                              <p className="text-[10vw] font-arno lg:text-[4vw] text-slate-500 opacity-30 leading-none absolute top-[1vw] left-[2vw]">
                                 "
                               </p>
-                              <p className="text-[11px] lg:text-[16px] leading-relaxed px-1 lg:px-4 lg:pt-9 text-slate-600 font-medium line-clamp-3 text-center mt-4 lg:-mt-2">
+                              <p className="text-[2.5vw] font-arnoCaption lg:text-[1.1vw] leading-relaxed px-[1vw] lg:px-[2vw] pt-[4vw] lg:pt-[2.5vw] text-slate-600 font-medium line-clamp-3 text-center">
                                 {item.pesan}
                               </p>
                             </div>
-                            <div className="bg-[#454F23] h-[35px] flex items-center justify-center px-3">
-                              <p className="text-white text-[12px] lg:text-[18px] font-bold text-center line-clamp-1">
+                            <div className="bg-[#5A6644] font-arno h-[8vw] lg:h-[3vw] flex items-center justify-center px-[2vw]">
+                              <p className="text-white text-[2.5vw] lg:text-[1.1vw] font-bold text-center line-clamp-1">
                                 {item.nama}
                               </p>
                             </div>
@@ -204,36 +218,38 @@ const DoaDanUcapan = () => {
 
                 {/* Button See All / Kembali */}
                 <motion.button
-                  onClick={() => setShowAll(!showAll)}
-                  className="bg-[#6C7852] h-[33px] lg:h-[40px] text-[12px] lg:text-[18px] font-arno text-[#FEFBF0] uppercase mt-3 flex items-center justify-center gap-2 rounded-full"
-                >
-                  <Image
-                    src="/images/doa/Pesan.svg"
-                    alt="Kirim"
-                    width={20}
-                    height={20}
-                    className="object-cover w-[19px] h-[20px] lg:w-[22px]"
-                  />
-                  {showAll ? "KEMBALI" : "LIHAT SEMUA PESAN"}
-                </motion.button>
+  onClick={() => setShowAll(!showAll)}
+  className="bg-[#6C7852] font-semibold mt-[2.5vw] lg:mt-[0vw] h-[8vw] lg:h-[3vw] text-[3vw] lg:text-[1.3vw] font-arno text-[#FEFBF0] uppercase flex items-center justify-center gap-[0.8vw] rounded-full pt-[0.3vw] lg:pt-[0.15vw]"
+>
+  <Image
+    src="/images/doa/Pesan.svg"
+    alt="Pesan"
+    width={0}
+    height={0}
+    sizes="100vw"
+    className="w-[4vw] h-auto lg:w-[1.6vw]"
+  />
+  {showAll ? "KEMBALI" : "LIHAT SEMUA PESAN"}
+</motion.button>
               </motion.div>
             </div>
           </div>
 
+          {/* Popup Pesan Terkirim */}
           {showPopup && (
             <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50">
-              <div className="bg-[#F7F8F2] rounded-2xl p-6 w-[340px] text-center shadow-xl border border-[#E4E7D6]">
-                <h3 className="text-[22px] font-arno font-semibold text-[#454F23] mb-3 tracking-wide">
-                  Pesan Terkirim !
+              <div className="bg-[#F7F8F2] rounded-2xl p-[5vw] lg:p-[2vw] w-[80vw] lg:w-[25vw] text-center shadow-xl border border-[#E4E7D6]">
+                <h3 className="text-[5vw] lg:text-[1.6vw] font-arno font-semibold text-[#454F23] mb-[2vw] lg:mb-[0.8vw] tracking-wide">
+                  Pesan Terkirim!
                 </h3>
-                <div className="w-10 h-[2px] bg-[#454F23] mx-auto mb-4 opacity-60"></div>
-                <p className="text-[16px] text-[#6C7852] font-arno leading-relaxed mb-6">
+                <div className="w-[8vw] lg:w-[3vw] h-[0.2vw] bg-[#454F23] mx-auto mb-[3vw] lg:mb-[1vw] opacity-60" />
+                <p className="text-[3.5vw] lg:text-[1.2vw] text-[#6C7852] font-arno leading-relaxed mb-[4vw] lg:mb-[1.5vw]">
                   Terima kasih atas doa dan ucapan baik Anda. Kami sangat
                   menghargai pesan yang telah anda diberikan.
                 </p>
                 <button
                   onClick={() => setShowPopup(false)}
-                  className="bg-[#454F23] hover:bg-[#5A6530] transition-all text-white px-6 py-2 rounded-full text-[14px] tracking-wide font-arno"
+                  className="bg-[#454F23] hover:bg-[#5A6530] transition-all text-white px-[5vw] lg:px-[2vw] py-[1.5vw] lg:py-[0.6vw] rounded-full text-[3vw] lg:text-[1vw] tracking-wide font-arno"
                 >
                   Kembali
                 </button>

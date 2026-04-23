@@ -1,27 +1,71 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Noto_Sans } from "next/font/google";
 import "./globals.css";
-import localFont from 'next/font/local'
+import localFont from "next/font/local";
 
 const arnoPro = localFont({
-  src: './fonts/arnopro_bold.otf',  // ← path berubah
-  variable: '--font-arno-pro',
-})
+  src: [
+    {
+      path: "./fonts/fonnts.com-Arno-Pro-.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/fonnts.com-Arno-Pro-Smbd-.otf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "./fonts/arnopro_bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/ArnoProSemiboldItalic.otf",
+      weight: "600",
+      style: "italic",
+    },
+  ],
+  variable: "--font-arno-pro",
+});
+
+const arnoCaption = localFont({
+  src: [
+    {
+      path: "./fonts/arnopro_caption.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/arnopro_boldcaption.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-arno-caption",
+});
 
 const corsiva = localFont({
   src: [
     {
-      path: './fonts/Monotype-Corsiva-Regular.ttf',  // ← path berubah
-      weight: '400',
-      style: 'normal',
+      path: "./fonts/Monotype-Corsiva-Regular.ttf", // ← path berubah
+      weight: "400",
+      style: "normal",
     },
     {
-      path: './fonts/Monotype-Corsiva-Bold.ttf',  // ← path berubah
-      weight: '700',
-      style: 'normal',
+      path: "./fonts/Monotype-Corsiva-Bold.ttf", // ← path berubah
+      weight: "700",
+      style: "normal",
     },
   ],
-  variable: '--font-corsiva',
-})
+  variable: "--font-corsiva",
+});
+
+
+const notoSans = Noto_Sans({
+  variable: "--font-noto-sans",
+  subsets: ["latin"],
+  weight: ["400", "500", "700", "800"],
+});
 
 const zapfino = localFont({
   src: "./fonts/Zapfino.ttf",
@@ -45,7 +89,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${arnoPro.variable} ${corsiva.variable} ${zapfino.variable}`}>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} ${arnoPro.variable} ${corsiva.variable} ${zapfino.variable}  ${arnoCaption.variable}  ${notoSans.variable}
+`}
+    >
       <body>{children}</body>
     </html>
   );

@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Hero from "@/components/sections/Hero"
 import TanggalLokasi from "@/components/sections/TanggalLokasi"
 import Doa from "@/components/sections/Doa"
@@ -9,22 +12,25 @@ import Header from "@/components/layout/Header"
 import Opening from "@/components/popup/Opening"
 import Gallery from "@/components/sections/Gallery"
 
-
 const page = () => {
+  const [start, setStart] = useState(false);
+
   return (
     <>
-      {/* <Opening/> */}
+      {/* Konten selalu render normal, tidak di-invisible */}
       <Header/>
-       <Hero/>
-       <TanggalLokasi/>
-       <Doa/>
-       <Waktu/>
-       <Rsvp/>
-       <Gallery/>
-       <DoaDanUcapan/>
-       <Terimakasih/>
+      <Hero/>
+      <TanggalLokasi/>
+      <Doa/>
+      <Waktu/>
+      <Rsvp/>
+      <Gallery/>
+      <DoaDanUcapan/>
+      <Terimakasih/>
+
+      {/* Popup di atas konten */}
+      {!start && <Opening setStart={setStart} />}
     </>
   )
 }
-
 export default page

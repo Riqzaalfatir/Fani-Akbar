@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
@@ -52,15 +53,15 @@ const Hero = () => {
             PERNIKAHAN
           </h3>
 
-          <div className="mt-0 lg:mt-[1.5vw] flex flex-col items-center text-[#CFAA67] font-corsiva leading-none">
+          <div className="mt-[1.7vw] lg:mt-[1.5vw] flex flex-col items-center text-[#CFAA67] font-corsiva leading-none">
             {/* ✅ text-[64px] → text-[16vw] */}
-            <span className="text-[16vw] lg:text-[6.349vw] ml-[-30vw] lg:ml-[-10.5vw]">Fani</span>
-            <span className="text-[12vw] lg:text-[4.233vw] -mt-2.5 lg:-mt-[1vw] ml-[-18vw] lg:ml-[-8vw]">&</span>
-            <span className="text-[16vw] lg:text-[6.349vw] mt-[-11vw] ml-[28vw] lg:mt-[-3vw] lg:ml-[9vw]">Akbar</span>
+            <span className="text-[16vw] lg:text-[6.349vw] ml-[-30vw] lg:ml-[-10.5vw] italic">Fani</span>
+            <span className="text-[12vw] lg:text-[4.233vw] -mt-2.5 lg:-mt-[1vw] ml-[-18.9vw] lg:ml-[-8vw] italic">&</span>
+            <span className="text-[16vw] lg:text-[6.349vw] mt-[-11vw] ml-[24vw] lg:mt-[-3vw] lg:ml-[9vw] italic">Akbar</span>
           </div>
 
           {/* ✅ font size px → vw */}
-          <h3 className="font-arno text-[4vw] lg:text-[1.587vw]  text-[#CFAA67] mt-[7%] lg:mt-[8%]">
+          <h3 className="font-arno text-[4vw] lg:text-[1.587vw]  text-[#CFAA67] mt-[7%] lg:mt-[8%] font-semibold">
             16 . 05 . 2026
           </h3>
         </div>
@@ -97,17 +98,29 @@ const Hero = () => {
           width={0}
           height={0}
           sizes="100vw"
-          className="absolute bottom-[-3vw] right-[-13vw] lg:right-0 z-10 w-[48vw] lg:w-[25%] h-auto"
+          className="absolute bottom-[-3vw] right-[-13vw] lg:right-0 z-10 w-[50vw] lg:w-[25%] h-auto"
         />
 
-        <Image
-          src="/images/hero/MerakKiri.webp"
-          alt="Merak Kiri"
-          width={0}
-          height={0}
-          sizes="100vw"
-          className="absolute left-[0%] bottom-[0%] w-[89%] h-auto lg:w-[33%] z-20"
-        />
+        <motion.div
+  className="absolute left-[0%] bottom-[0%] w-[89%] h-auto lg:w-[33%] z-20"
+  style={{ transformOrigin: "50% 100%" }}
+  animate={{ rotate: [0, 0.8, 0, -0.8, 0] }}
+  transition={{
+    duration: 5,
+    repeat: Infinity,
+    ease: "easeInOut",
+    repeatType: "loop",
+  }}
+>
+  <Image
+    src="/images/hero/MerakKiri.webp"
+    alt="Merak Kiri"
+    width={0}
+    height={0}
+    sizes="100vw"
+    className="w-full h-auto"
+  />
+</motion.div>
 
         <Image
           src="/images/hero/BungaKiri.webp"
@@ -160,7 +173,7 @@ const Hero = () => {
           width={0}
           height={0}
           sizes="100vw"
-          className="absolute bottom-[23%] right-[14%] lg:bottom-[13%] lg:right-[9.5%] lg:w-[6%] w-[16%] h-auto z-30"
+          className="absolute bottom-[23%] right-[14%] lg:bottom-[11%] lg:right-[8.4%] lg:w-[7.5%] w-[16%] h-auto z-30"
         />
       </div>
     </div>

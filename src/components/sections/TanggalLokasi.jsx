@@ -1,5 +1,8 @@
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import Animate from "@/components/ui/Animate";
+
 
 const TanggalLokasi = () => {
   return (
@@ -52,7 +55,7 @@ const TanggalLokasi = () => {
         />
 
         {/* Ornamen Pohon Kiri */}
-        <div className="absolute bottom-0 left-[2.5vw] lg:left-[0vw] w-[50vw] z-10 scale-x-110 lg:w-[26.5vw]">
+        <div className="absolute bottom-0 left-[2.5vw] lg:left-[0vw] w-[52vw] z-10 scale-x-110 lg:w-[26.5vw]">
           <Image
             src="/images/tanggal/PohonKiri.webp"
             alt="Ornament"
@@ -80,7 +83,7 @@ const TanggalLokasi = () => {
           sizes="100vw"
           className="
             absolute
-            top-[50%]
+            top-[48%]
             left-[12%]
             lg:top-[43%]
             lg:left-[8%]
@@ -99,8 +102,8 @@ const TanggalLokasi = () => {
           sizes="100vw"
           className="
             absolute
-            top-[79%]
-            left-[4%]
+            top-[81%]
+            left-[2%]
             lg:top-[85.5%]
             lg:left-[25.5%]
             w-[13%]
@@ -112,6 +115,8 @@ const TanggalLokasi = () => {
 
         {/* CONTENT - flow normal, bukan absolute */}
         <div className="relative z-20 flex flex-col items-center w-full px-[5vw] pt-[26.41vw] pb-[44.87vw] text-center lg:pt-[7.606vw] lg:pb-[7.606vw]">
+
+          <Animate>
           <Image
             src="/images/tanggal/Bismillah.png"
             alt="ornament"
@@ -119,10 +124,12 @@ const TanggalLokasi = () => {
             height={44}
             className="w-[55vw] h-auto lg:w-[20vw]"
           />
+          </Animate>
 
-          <h2 className="font-arno font-semibold text-[3vw] lg:text-[1.190vw] text-[#75796A] mt-[7vw] leading-relaxed lg:mt-[3.5vw]">
+          <Animate type="fadeup">
+          <h2 className="font-arno font-semibold text-[3vw] lg:text-[1.190vw] text-[#75796A] mt-[7vw] leading-relaxed lg:mt-[3vw]">
             Assalamu'alaikum Warahmatullahi Wabarakatuh <br />
-            <span className="block mt-[4vw] lg:mt-[1.3vw]">
+            <span className="block mt-[3vw] lg:mt-[1.3vw]">
               Dengan memohon rahmat dan ridha Allah SWT, <br />
               kami turut mengundang Bapak/Ibu/Saudara/i
               <br />
@@ -131,39 +138,55 @@ const TanggalLokasi = () => {
               putra-putri kami tercinta
             </span>
           </h2>
+          </Animate>
 
+          <Animate type="fadeup" delay={0.2}>
           <h1 className="font-zapfino text-[4.6vw] text-[#CFAA67] mt-[14vw] lg:text-[2.116vw] lg:mt-[5.5vw]">
             dr. Herfani Hemacindy Dewi
           </h1>
+          </Animate>
 
-          <p className="font-arno font-bold text-[3vw] text-[#75796A] mt-[0vw] lg:text-[1.190vw] lg:mt-[0.2vw]">
-            Putra dari
+          <Animate type="fadeup" delay={0.3}>
+          <p className="font-arnoCaption font-bold text-[3vw] text-[#75796A] mt-[1vw] lg:text-[1.190vw] lg:mt-[0.5vw]">
+            Putri dari
           </p>
+          </Animate>
 
-          <h2 className="font-arno font-semibold text-[3vw] text-[#75796A] mt-[4vw] leading-relaxed lg:text-[1.190vw] lg:mt-[1vw]">
+            <Animate type="fadeup" delay={0.4}>
+          <h2 className="font-arno font-semibold text-[3vw] text-[#75796A] mt-[5vw] leading-relaxed lg:text-[1.190vw] lg:mt-[1vw]">
             Bpk. Mayjen TNI dr. Hadi Juanda, Sp.PD., M.A.R.S., CFrA.
             <br />
             Ibu dr. Heka Mayasari, Sp.A.
           </h2>
+                    </Animate>
 
+          <Animate type="fadeup" delay={0.5}>
           <h1 className="font-corsiva text-[12vw] text-[#CFAA67] mt-[4vw] lg:text-[3.174vw] lg:mt-[0.8vw]">
             &
           </h1>
+          </Animate>
 
-          <h1 className="font-zapfino text-[4.61vw] text-[#CFAA67] mt-[15vw] lg:text-[2.116vw] lg:mt-[5vw]">
+          <Animate type="fadeup" delay={0.6}>
+          <h1 className="font-zapfino text-[4.61vw] text-[#CFAA67] mt-[10vw] lg:text-[2.116vw] lg:mt-[5vw]">
             Lettu Ckm dr. Akbar Nugraha
           </h1>
+          </Animate>
 
-          <p className="font-arno font-bold text-[3vw] text-[#75796A] mt-[3vw] lg:text-[1.2vw] lg:mt-[1vw]">
+          <Animate type="fadeup" delay={0.7}>
+          <p className="font-arnoCaption font-bold text-[3vw] text-[#75796A] mt-[1vw] lg:text-[1.2vw] lg:mt-[1vw]">
             Putra dari
           </p>
+          </Animate>
 
-          <p className="font-arno font-semibold text-[3vw] text-[#75796A] mt-[3vw] leading-relaxed lg:text-[1.2vw] lg:mt-[0.8vw]">
+          <Animate type="fadeup" delay={0.8}>
+          <p className="font-arno font-semibold text-[3vw] text-[#75796A] mt-[5vw] leading-relaxed lg:text-[1.2vw] lg:mt-[1vw]">
             Bpk. Ir. Hendra Iskaq, M.B.A.
             <br />
             Ibu Dra. Theresya, M.M.
           </p>
+          </Animate>
 
+          <Animate type="fadeup" delay={0.9}>
           <p className="font-arno font-semibold text-[3vw] text-[#75796A] mt-[9vw] leading-relaxed lg:text-[1.2vw] lg:mt-[3vw]">
             Sukacita kami akan lengkap
             <br />
@@ -171,6 +194,8 @@ const TanggalLokasi = () => {
             <br />
             pada hari perayaan kami.
           </p>
+                    </Animate>
+
         </div>
 
         {/* <Image
@@ -427,22 +452,26 @@ const TanggalLokasi = () => {
     lg:w-[10vw] lg:hidden
   "
         />
-        <Image
-          src="/images/tanggal/Merak.webp"
-          alt="Bunga kiri"
-          width={0}
-          height={0}
-          sizes="100vw"
-          className="
-    absolute
-    bottom-[-0vw]
-    right-[0vw]
-    w-[29vw]
-    h-auto
-    z-10
-    lg:w-[16vw]
-  "
-        />
+        <motion.div
+          className="absolute bottom-[0vw] right-[0vw] w-[29vw] h-auto z-10 lg:w-[16vw]"
+          style={{ transformOrigin: "50% 100%" }}
+          animate={{ rotate: [0, 0.8, 0, -0.8, 0] }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            repeatType: "loop",
+          }}
+        >
+          <Image
+            src="/images/tanggal/Merak.webp"
+            alt="Bunga kiri"
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-full h-auto"
+          />
+        </motion.div>
       </div>
     </div>
   );

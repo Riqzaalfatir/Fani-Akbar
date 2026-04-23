@@ -7,8 +7,11 @@ module.exports = {
     extend: {
       fontFamily: {  // ← ini yang kurang
         'arno': ['var(--font-arno-pro)'],
+        'arnoCaption': ['var(--font-arno-caption)'],
         'corsiva': ['var(--font-corsiva)'],
         'zapfino': ["var(--font-zapfino)"],
+          'noto': ['var(--font-noto-sans)'], // ← tambah ini
+
       },
     },
   },
