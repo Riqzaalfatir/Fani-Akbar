@@ -141,13 +141,13 @@ const TanggalLokasi = () => {
           </Animate>
 
           <Animate type="fadeup" delay={0.2}>
-          <h1 className="font-zapfino text-[4.6vw] text-[#CFAA67] mt-[11.5vw] lg:text-[2.116vw] lg:mt-[6vw]">
+          <h1 className="font-zapfino text-[4.6vw] text-[#CFAA67] mt-[14vw] lg:text-[2.116vw] lg:mt-[6vw]">
             dr. Herfani Hemacindy Dewi
           </h1>
           </Animate>
 
           <Animate type="fadeup" delay={0.3}>
-          <p className="font-arnoCaption font-bold text-[3vw] text-[#75796A] mt-[1vw] lg:text-[1.190vw] lg:mt-[1vw]">
+          <p className="font-arnoCaption font-bold text-[3vw] text-[#75796A] mt-[2.5vw] lg:text-[1.190vw] lg:mt-[1vw]">
             Putri dari
           </p>
           </Animate>
@@ -167,13 +167,13 @@ const TanggalLokasi = () => {
           </Animate>
 
           <Animate type="fadeup" delay={0.6}>
-          <h1 className="font-zapfino text-[4.61vw] text-[#CFAA67] mt-[7.5vw] lg:text-[2.116vw] lg:mt-[5.5vw]">
+          <h1 className="font-zapfino text-[4.61vw] text-[#CFAA67] mt-[10vw] lg:text-[2.116vw] lg:mt-[5.5vw]">
             Lettu Ckm dr. Akbar Nugraha
           </h1>
           </Animate>
 
           <Animate type="fadeup" delay={0.7}>
-          <p className="font-arnoCaption font-bold text-[3vw] text-[#75796A] mt-[1vw] lg:text-[1.2vw] lg:mt-[1.5vw]">
+          <p className="font-arnoCaption font-bold text-[3vw] text-[#75796A] mt-[2.5vw] lg:text-[1.2vw] lg:mt-[1.5vw]">
             Putra dari
           </p>
           </Animate>
