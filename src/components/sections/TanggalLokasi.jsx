@@ -147,7 +147,7 @@ const TanggalLokasi = () => {
           </Animate>
 
           <Animate type="fadeup" delay={0.3}>
-          <p className="font-arnoCaption font-bold text-[3vw] text-[#75796A] mt-[4vw] lg:text-[1.190vw] lg:mt-[1vw]">
+          <p className="font-arnoCaption font-bold text-[3vw] text-[#75796A] mt-[6vw] lg:text-[1.190vw] lg:mt-[1vw]">
             Putri dari
           </p>
           </Animate>
@@ -173,7 +173,7 @@ const TanggalLokasi = () => {
           </Animate>
 
           <Animate type="fadeup" delay={0.7}>
-          <p className="font-arnoCaption font-bold text-[3vw] text-[#75796A] mt-[4vw] lg:text-[1.2vw] lg:mt-[1.5vw]">
+          <p className="font-arnoCaption font-bold text-[3vw] text-[#75796A] mt-[6vw] lg:text-[1.2vw] lg:mt-[1.5vw]">
             Putra dari
           </p>
           </Animate>
