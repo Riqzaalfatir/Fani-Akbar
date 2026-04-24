@@ -29,7 +29,6 @@ const Hero = () => {
 <div className="absolute bottom-0 left-0 w-full h-[49%] lg:h-[60%] z-[1] bg-gradient-to-b from-[#2E3713]/0 via-[#2E3713]/70 lg:via-[#2E3713]/60 to-[#2E3713]/95 lg:to-[#2E3713]/100" />
 
         {/* LOGO PROVITE */}
-        <Animate type="fadeup">
           <Image
             src="/images/terimakasih/LogoProvite.svg"
             alt="Merak"
@@ -38,7 +37,6 @@ const Hero = () => {
             sizes="100vw"
             className="absolute bottom-[1vw] lg:bottom-[1vw] left-1/2 -translate-x-1/2 w-[23vw] lg:w-[9.5vw] h-auto z-10"
           />
-        </Animate>
 
         {/* CONTENT */}
         <div className="absolute bottom-[26vw] lg:bottom-[7.5vw] left-0 w-full flex flex-col items-center z-10">
