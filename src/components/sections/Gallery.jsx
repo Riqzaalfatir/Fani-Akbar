@@ -22,9 +22,10 @@ import "yet-another-react-lightbox/plugins/counter.css";
 // Daftar foto yang ditampilkan di carousel & lightbox 
 const images = [
   { src: "/images/gallery/FotoCouple.webp", position: "object-center lg:object-[50%_50%]" },
+  { src: "/images/gallery/FotoCouple3.webp", position: "object-center lg:object-[50%_30%]" },
+  { src: "/images/gallery/FotoAkbar.webp", position: "object-center lg:object-[50%_50%]" },
+  { src: "/images/gallery/FotoFani.webp", position: "object-center lg:object-[50%_50%]" },
   { src: "/images/gallery/FotoCouple2.webp", position: "object-center lg:object-[50%_35%]" },
-  { src: "/images/gallery/FotoCouple3.webp", position: "object-center lg:object-[50%_15%]" },
-  { src: "/images/gallery/FotoCouple4.webp", position: "object-center lg:object-[50%_0%]" },
 ];
 
 const Gallery = () => {
@@ -51,7 +52,7 @@ const Gallery = () => {
 
   return (
     <>
-      <div className="relative w-full overflow-hidden" ref={emblaRef}>
+      <div id='galleri' className="relative w-full overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {images.map((img, index) => (            
             <div

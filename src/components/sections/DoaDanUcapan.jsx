@@ -220,7 +220,7 @@ const DoaDanUcapan = () => {
                           >
                             <div className="p-[2vw] lg:p-[1vw] relative flex-1 flex flex-col justify-center">
 
-                              <p className="text-[10vw] font-arno lg:text-[4vw] text-slate-500 opacity-30 leading-none absolute top-[1vw] left-[2vw]">
+                              <p className="text-[10vw] font-arno lg:text-[4vw] text-slate-500 opacity-30 leading-none absolute top-[2vw] left-[2vw] lg:top-[1.5vw] lg:left-[1.5vw]">
                                 "
                               </p>
 
